@@ -1,0 +1,464 @@
+:root {
+    --primary: rgb(209, 167, 252, 1);
+    --bg: rgba(213, 184, 255, 1);
+    --base: rgba(99, 47, 150, 1);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-variant: small-caps;
+    background-color: var(--bg);
+    color: #fff;
+}
+
+/*navigasi bar*/
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.7rem 7%;
+    background-color: rgba(99, 47, 150, 0.8);
+    border-bottom: 1px solid var(--primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+
+.navbar .navbar-logo span {
+    color: var(--primary);
+}
+
+.navbar .detail-nav a {
+    color: #fff;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 0 1rem;
+}
+
+.navbar .detail-nav a:hover {
+    color: var(--primary);
+}
+
+.navbar .detail-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .detail-nav a:hover::after {
+    transform: scaleX(0.5);
+}
+
+.navbar .navbar-ex a {
+    color: #fff;
+    margin: 0 0.5rem;
+
+}
+
+.navbar .navbar-ex a:hover {
+    color: var(--primary);
+}
+
+#hm-menu {
+    display: none;
+}
+
+/* Navbar Search Form */
+.navbar .search-form {
+    position: absolute;
+    top: 100%;
+    right: 7%;
+    background-color: #fff;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.navbar .search-form.active {
+    transform: scaleY(1);
+    transition: 0.3s;
+}
+
+.navbar .search-form input {
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: var(--bg);
+    padding: 1rem;
+}
+
+.navbar .search-form label {
+    cursor: pointer;
+    font-size: 2rem;
+    margin-right: 1.5rem;
+    color: var(--base);
+}
+
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(img/bghome.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.home::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(213, 184, 255, 1) 3%, rgba(255, 255, 255, 0) 25%);
+}
+
+.home .content {
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+    background-color: rgb(209, 167, 252, 0.8);
+    border-radius: 2rem;
+    box-shadow: 1px 1px 3px rgb(209, 167, 252, 0.5);
+}
+
+.home .content h1 {
+    font-size: 5rem;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgb(209, 167, 252, 0.5);
+    line-height: 1.2;
+}
+
+.home .content h1 span {
+    color: rgba(99, 47, 150, 1);
+}
+
+.home .content p {
+    font-size: 2rem;
+    margin-top: 1rem;
+    line-height: 1.4;
+    font-weight: 600;
+    color: #5d1081;
+    text-shadow: 1px 1px 3px rgb(209, 167, 252, 1);
+}
+
+/*Hal Login*/
+.login {
+    min-height: 100vh;
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    background-image: url(img/bglogin.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.login::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(213, 184, 255, 1) 7%, rgba(255, 255, 255, 0) 25%);
+}
+
+.login .form {
+    padding: 5rem 5rem;
+    margin-left: 5rem;
+    margin-right: 50rem;
+    width: 50%;
+    background-color: var(--base);
+    border-radius: 1rem;
+}
+
+.login .form .isi input {
+    margin-bottom: 0.7rem;
+    width: 80%;
+    height: 2rem;
+    margin: 1rem;
+    border-radius: 10px;
+}
+
+.login .form .isi .judulf {
+    display: flex;
+    font-size: 4rem;
+    padding-bottom: 2rem;
+}
+
+.login .form .isi .labelf {
+    font-size: 1.5rem;
+}
+
+.login .form .isi .btn {
+    margin-left: 6.5rem;
+    cursor: pointer;
+}
+
+.login .form .isi #btnl {
+    margin: 0.6rem;
+    padding: 0.5rem 3%;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: rgba(99, 47, 150, 1);
+    background-color: var(--primary);
+}
+
+/*Popular Art*/
+
+.popular {
+    padding-top: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.popular .judul-popular {
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    align-items: center;
+}
+
+.popular .judul-popular h1 {
+    text-align: center;
+    font-size: 5rem;
+    color: var(--base);
+    cursor: pointer;
+}
+
+.popular .judul-popular h1 span {
+    color: #fff;
+}
+
+.popular .judul-popular p {
+    padding-top: 1rem;
+    font-weight: 500;
+    text-align: center;
+    color: #000;
+    font-size: 1.5rem;
+}
+
+.popular .gallery {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    overflow-x: scroll;
+}
+
+.popular .gallery div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 2rem;
+    padding: 1rem;
+    flex: none;
+}
+
+.popular .gallery .grup-container .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    background-color: var(--base);
+}
+
+.popular .gallery .grup-container img {
+    width: 80%;
+    filter: grayscale(100%);
+    border-radius: 1rem;
+    transition: 0.5s;
+}
+
+.popular .gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.popular .gallery-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#btnview {
+    border-radius: 1rem;
+    width: 6rem;
+    height: 2rem;
+    cursor: pointer;
+    background-color: var(--primary);
+}
+
+#btnback,
+#btnnext {
+    width: 3rem;
+    cursor: pointer;
+    margin: 1rem;
+}
+
+.popular .gallery div img:hover {
+    filter: grayscale(0);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/*Community*/
+
+.community {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.community .judul-community {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    align-items: center;
+}
+
+.community .judul-community h1 {
+    text-align: center;
+    font-size: 5rem;
+    color: var(--base);
+    padding-left: 1rem;
+}
+
+.community .judul-community p {
+    padding-top: 1rem;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.community .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+}
+
+.community .content-wrapper .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(209, 97, 253);
+    border-color: #000;
+    border-radius: 2rem;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+
+}
+
+.community .content-wrapper .content h2 a {
+    color: rgb(108, 11, 138);
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.community .content-wrapper .content p {
+    color: var(--base);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+
+/*Media queries*/
+/*Laptop*/
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+/*Tablet*/
+@media (max-width: 758px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    #hm-menu {
+        display: inline-block;
+    }
+
+    .navbar .detail-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #fff;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar .detail-nav.active {
+        right: 0;
+    }
+
+    .navbar .detail-nav a {
+        color: rgb(132, 59, 204);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5em;
+        font-size: 2rem;
+    }
+
+    .navbar .detail-nav a::after {
+        transform-origin: 0 0;
+    }
+
+    .navbar .detail-nav a:hover::after {
+        transform: scaleX(0.2);
+    }
+
+    .login .form .isi .btn {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+/*Phone*/
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+
+
+
+
+
+/*halaman awal*/
